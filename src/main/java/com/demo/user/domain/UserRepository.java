@@ -1,16 +1,18 @@
 package com.demo.user.domain;
 
 
-import java.util.List;
-
 import org.springframework.data.repository.CrudRepository;
 
-import com.demo.user.domain.UserEntity;
-
+/**
+ * this class uses JPA to connect to DB
+ * it extends CrudRepository which makes it a repository ootb
+ * CrudRepository exposes default methods to get data from db 
+ * and we don't need to implement UserRepository
+ * @author Iqbaldeep_Singh
+ *
+ */
 public interface UserRepository extends CrudRepository<UserEntity, Long> {
 
-	List<UserEntity> findByLastName(String lastName);
-	
-//	List<UserEntity> findAll();
+
 
 }

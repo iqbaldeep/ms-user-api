@@ -6,7 +6,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-
+/**
+ * User model object used for interacting with API consumers
+ * @JsonProperty helps jackson to serealize decorated fields 
+ * and omit them in case they are null
+ * @author Iqbaldeep_Singh
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
@@ -29,7 +35,13 @@ public class User {
 	@JsonProperty("dob")
 	private String dob;
 	
-	//used to initialize a user object
+	/**
+	 * used to initialize a user object
+	 * @param id
+	 * @param firstName
+	 * @param lastname
+	 * @param dob
+	 */
 	public User(Long id, String firstName, String lastname, String dob) {
 		this.id = id;
 		this.firstName = firstName;
@@ -37,7 +49,9 @@ public class User {
 		this.dob = dob;
 	}
 	
-	//empty constructor required only for JPA
+	/**
+	 * default constructor
+	 */
 	protected User() {
 		
 	}
@@ -159,11 +173,20 @@ public class User {
 	    return o.toString().replace("\n", "\n    ");
 	  }
 	  
+	  /**
+	   * gets builder for this object
+	   * @return
+	   */
 	  public static Builder getBuilder(){
 		  
 		  return new Builder();
 	  }
 	  
+	  /**
+	   * builder class used to build User object using builder pattern
+	   * @author Iqbaldeep_Singh
+	   *
+	   */
 	  public static class Builder{
 			
 			Long id;

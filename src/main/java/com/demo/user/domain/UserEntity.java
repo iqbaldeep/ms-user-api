@@ -11,29 +11,41 @@ import org.joda.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
+/**
+ * database entity decorated with DB specific annotations
+ * this entity is persisted in DB
+ * @author Iqbaldeep_Singh
+ *
+ */
 @Entity
 public class UserEntity {
 	
+	/* id is auto-generated and persisted in DB */
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@JsonProperty("firstName")
 	private String firstName;
 	
 	private String lastName;
 	
 	private LocalDate dob;
 	
-	//used to initialize a user object
+	/**
+	 * constructor used to initialize a UserEntity object
+	 * @param firstName
+	 * @param lastname
+	 * @param dob
+	 */
 	public UserEntity(String firstName, String lastname, LocalDate dob) {
 		this.firstName = firstName;
 		this.lastName = lastname;
 		this.dob = dob;
 	}
 	
-	//empty constructor required only for JPA
+	/**
+	 * empty constructor required only for JPA
+	 */
 	protected UserEntity() {
 		
 	}
@@ -145,11 +157,20 @@ public class UserEntity {
 	    return o.toString().replace("\n", "\n    ");
 	  }
 	  
+	  /**
+	   * get the builder object for this class
+	   * @return
+	   */
 	  public static Builder getBuilder(){
 
 		  return new Builder();
 	  }
 	  
+	  /**
+	   * used to build the object
+	   * @author Iqbaldeep_Singh
+	   *
+	   */
 	  public static class Builder{
 			
 			
@@ -178,6 +199,10 @@ public class UserEntity {
 				return this;
 			}
 			
+			/**
+			 * creates new UserEntity object and sets the values in builder to entity
+			 * @return
+			 */
 			public UserEntity build(){
 				
 				UserEntity entity = new UserEntity();

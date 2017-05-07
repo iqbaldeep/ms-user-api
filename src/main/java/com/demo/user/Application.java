@@ -24,12 +24,12 @@ public class Application {
 	@Bean
 	public CommandLineRunner saveUsersOnAppLoad(UserRepository repository) {
 		return (args) -> {
-			// add few users to in-memory 
-			repository.save(new UserEntity( "Jack", "Bauer", new LocalDate()));
-			repository.save(new UserEntity( "Chloe", "O'Brian", new LocalDate()));
-			repository.save(new UserEntity( "Kim", "Bauer", new LocalDate()));
-			repository.save(new UserEntity( "David", "Palmer", new LocalDate()));
-			repository.save(new UserEntity( "Michelle", "Dessler", new LocalDate()));
+			// add few users to DB on app bootstrap
+			repository.save(new UserEntity( "Tom", "Cruise", new LocalDate()));
+			repository.save(new UserEntity( "Ed", "Harris", new LocalDate()));
+			repository.save(new UserEntity( "Johnny", "Depp", new LocalDate()));
+			repository.save(new UserEntity( "Hugh", "Jackman", new LocalDate()));
+			repository.save(new UserEntity( "Matt", "Damon", new LocalDate()));
 			
 			LOG.debug("Users saved successfully on app bootstrap");
 			
