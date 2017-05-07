@@ -34,7 +34,7 @@ public class ModelBuilder {
 	 * @param date from DB
 	 * @return human readable date string in format MM/dd/yyyy
 	 */
-	private static String getReadableDate(LocalDate date){
+	static String getReadableDate(LocalDate date){
 		String readableDate = null;
 		//convert only if non-null
 		if(null != date){
