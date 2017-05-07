@@ -1,0 +1,13 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: User API
+        
+logging:
+    file: user-api.log
+    level:
+      'com.demo.user': DEBUG
+
+  
