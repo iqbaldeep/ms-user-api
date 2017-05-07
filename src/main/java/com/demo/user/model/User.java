@@ -52,7 +52,7 @@ public class User {
 	/**
 	 * default constructor
 	 */
-	protected User() {
+	public User() {
 		
 	}
 	
