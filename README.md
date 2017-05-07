@@ -12,7 +12,7 @@ This project contains bunch of springboot APIs that allow to get/add users in in
 
 ### Build app ###
 * Clone repository using `git clone https://github.com/iqbaldeep/ms-user-api.git`
-* Navigate to directory `cd angular-employee-demo`
+* Navigate to directory `cd ms-user-api`
 * Install dependencies using `mvn clean install`
 ### Run app ###
 
